@@ -1,10 +1,10 @@
-#oak's farming
+# oak's farming
 in-progress farming mod made in kotlin for fabric
 
-#why
+# why
 i want to learn kotlin
 
-#forge
+# forge
 not now, kotlin is 🦀 on 🅱orge right now
 
-#lgpl-3.0 is the licence
+# lgpl-3.0 is the licence
