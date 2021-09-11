@@ -24,7 +24,7 @@ object OakFarming: ModInitializer {
     ) { ItemStack(Blocks.COBBLESTONE) }
     private val LOGGER = LogManager.getLogger(MOD_ID)
     private val configPath = FabricLoader.getInstance().configDir
-    private val configFile = configPath.resolve("oaks_farming.json")
+    val configFile = configPath.resolve("oaks_farming.json")
     val configuredJson = Json{prettyPrint = true}
     private val version: Int = 1
 
@@ -33,15 +33,7 @@ object OakFarming: ModInitializer {
 
     override fun onInitialize() {
 
-        LOGGER.info("Oak's Farming has initialized!")
-        if (FabricLoader.getInstance().isDevelopmentEnvironment == true) {
-            LOGGER.info("running via IDE!")
-        }
-        ModBlocks.registerBlocks()
-        ModItems.registerItems()
-        ModFeatures.registerFeatures()
-
-        val data = ConfigEntries(version, 1, 1)
+        val data = ConfigEntries(version, 2, 15)
         val string = configuredJson.encodeToString(data)
         println(string)
 
@@ -65,6 +57,16 @@ object OakFarming: ModInitializer {
             val outputStringFromFile = configuredJson.decodeFromString<ConfigEntries>(configFile.readText())
 
         }
+
+        LOGGER.info("Oak's Farming has initialized!")
+        if (FabricLoader.getInstance().isDevelopmentEnvironment == true) {
+            LOGGER.info("running via IDE!")
+        }
+        ModBlocks.registerBlocks()
+        ModItems.registerItems()
+        ModFeatures.registerFeatures()
+
+
 
 
     }
